@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Land</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .order-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><p id="name1">Sweet Land</p></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Sweet land.html" class="btn btn-default"><p class="nav-text">Home</p></a></li>
+                        <li><a href="cakes.html" class="btn btn-default"><p class="nav-text">Cakes</p></a></li>
+                        <li><a href="order.html" class="btn btn-default"><p class="nav-text">Order</p></a></li>
+                        <li><a href="login.html" class="btn btn-default"><p class="nav-text">Login</p></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="row">
+            <div class="col-md-4">
+                <h2 class="section-title">Order Your Cake</h2>
+                <p class="description">Find and order your favorite cakes with ease.</p>
+                <a href="login.html" class="btn btn-primary">Register Now</a>
+            </div>
+            <div class="col-md-4">
+                <h2 class="section-title">Popular Cakes</h2>
+                <p class="description">Explore our popular cakes.</p>
+                <a href="cakes.html" class="btn btn-success">View Cakes</a>
+            </div>
+            <div class="col-md-4">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="description">Get in touch with us for any inquiries.</p>
+                <a href="contact.html" class="btn btn-info">Contact Us</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="order-form">
+                <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="customerName">Name:</label>
+                        <input type="text" id="customerName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email:</label>
+                        <input type="email" id="customerEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone:</label>
+                        <input type="tel" id="customerPhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryAddress">Delivery Address:</label>
+                        <textarea id="deliveryAddress" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cakeType">Cake Type:</label>
+                        <select id="cakeType" class="form-control" required>
+                            <option value="Chocolate Delight">Chocolate Delight</option>
+                            <option value="Vanilla Dream">Vanilla Dream</option>
+                            <option value="Red Velvet">Red Velvet</option>
+                            <option value="Strawberry Bliss">Strawberry Bliss</option>
+                            <option value="Blueberry Burst">Blueberry Burst</option>
+                            <option value="Lemon Drizzle">Lemon Drizzle</option>
+                            <option value="Carrot Cake">Carrot Cake</option>
+                            <option value="Almond Delight">Almond Delight</option>
+                            <option value="Peanut Butter">Peanut Butter</option>
+                            <option value="Coffee Craze">Coffee Craze</option>
+                            <option value="Banana Walnut">Banana Walnut</option>
+                            <option value="Matcha Green Tea">Matcha Green Tea</option>
+                            <option value="Black Forest">Black Forest</option>
+                            <option value="Marble Swirl">Marble Swirl</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" value="1" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryDate">Delivery Date:</label>
+                        <input type="date" id="deliveryDate" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="orderModal" class="modal">
+            <div class="modal-content" align="center">
+                <span class="close">&times;</span>
+                <h2>Order Confirmation</h2>
+                <p id="orderDetails"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer__links">
+                <div class="footer__column">
+                    <h3>Sweet Land</h3>
+                    <ul>
+                        <li><a href="order-tracking.html">Track</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="aboutus.html">About US</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>180, KKS Road, Jaffna, Sri Lanka</li>
+                        <li>+94 77 568 1234</li>
+                        <li><a href="mailto:mail@sweetland.com">mail@sweetland.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            © Sweet land, All Rights Reserved. | Design & Concept by SA Cops.
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('#orderForm').on('submit', function(event) {
+                event.preventDefault();
+                
+                const name = $('#customerName').val();
+                const email = $('#customerEmail').val();
+                const phone = $('#customerPhone').val();
+                const address = $('#deliveryAddress').val();
+                const cakeType = $('#cakeType').val();
+                const quantity = $('#quantity').val();
+                const deliveryDate = $('#deliveryDate').val();
+                
+                const orderId = 'OR' + Date.now(); // Generate order ID
+                
+                const orderDetails = `
+                    Order ID: ${orderId}<br>
+                    Cake Type: ${cakeType}<br>
+                    Quantity: ${quantity}<br>
+                    Delivery Address: ${address}<br>
+                    Delivery Date: ${deliveryDate}
+                `;
+                
+                $('#orderDetails').html(orderDetails);
+                $('#orderModal').show();
+            });
+            
+            $('.close').click(function() {
+                $('#orderModal').hide();
+            });
+            
+            $(window).click(function(event) {
+                if ($(event.target).is('#orderModal')) {
+                    $('#orderModal').hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

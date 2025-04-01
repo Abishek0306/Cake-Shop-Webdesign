@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Land</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #content {
+            background-color: #eff4df;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-evenly;
+        }
+        .content .item {
+            width: 30%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: rgb(210, 119, 119);
+            transition: transform 0.2s, height 0.2s;
+            position: relative;
+        }
+        .content .item:hover {
+            transform: scale(1.05);
+        }
+        .content .item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><p id="name1">Sweet Land</p></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Sweet land.html" class="btn btn-default"><p class="nav-text">Home</p></a></li>
+                        <li><a href="cakes.html" class="btn btn-default"><p class="nav-text">Cakes</p></a></li>
+                        <li><a href="order.html" class="btn btn-default"><p class="nav-text">Order</p></a></li>
+                        <li><a href="login.html" class="btn btn-default"><p class="nav-text">Login</p></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="row">
+            <div class="col-md-4">
+                <h2 class="section-title">Order Your Cake</h2>
+                <p class="description">Find and order your favorite cakes with ease.</p>
+                <a href="login.html" class="btn btn-primary">Register Now</a>
+            </div>
+            <div class="col-md-4">
+                <h2 class="section-title">Popular Cakes</h2>
+                <p class="description">Explore our popular cakes.</p>
+                <a href="cakes.html" class="btn btn-success">View Cakes</a>
+            </div>
+            <div class="col-md-4">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="description">Get in touch with us for any inquiries.</p>
+                <a href="contact.html" class="btn btn-info">Contact Us</a>
+            </div>
+        </section>
+
+        <div id="content">
+            <div class="item">
+                <img src="Chocolate Delight.jpg" class="img-thumbnail" alt="Chocolate Delight">
+                <h3>Chocolate Delight</h3>
+                <p>$80.00</p>
+                <input type="number" id="chocolate-quantity" value="1" min="1" max="5">
+                <button class="btn btn-warning" onclick="addToCart('Chocolate Delight', 80, document.getElementById('chocolate-quantity').value)">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="Banana Walnut.jpg" class="img-thumbnail" alt="Banana Walnut">
+                <h3>Banana Walnut</h3>
+                <p>$78.00</p>
+                <input type="number" id="banana-quantity" value="1" min="1" max="5">
+                <button class="btn btn-warning" onclick="addToCart('Banana Walnut', 78, document.getElementById('banana-quantity').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <script>
+            function addToCart(productName, productPrice, quantity) {
+                alert(`Product: ${productName}\nPrice: $${productPrice.toFixed(2)}\nQuantity: ${quantity}`);
+            }
+        </script>
+        
+        <section class="row">
+            <div class="col-md-6">
+                <h2 class="section-title">Cake Menu</h2>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Cake</th>
+                            <th>Flavor</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chocolate Delight</td>
+                            <td>Chocolate</td>
+                            <td>Medium</td>
+                            <td>$25</td>
+                        </tr>
+                        <tr>
+                            <td>Vanilla Dream</td>
+                            <td>Vanilla</td>
+                            <td>Large</td>
+                            <td>$30</td>
+                        </tr>
+                        <tr>
+                            <td>Red Velvet</td>
+                            <td>Red Velvet</td>
+                            <td>Small</td>
+                            <td>$20</td>
+                        </tr>
+                        <tr>
+                            <td>Strawberry Bliss</td>
+                            <td>Strawberry</td>
+                            <td>Medium</td>
+                            <td>$27</td>
+                        </tr>
+                        <tr>
+                            <td>Blueberry Burst</td>
+                            <td>Blueberry</td>
+                            <td>Large</td>
+                            <td>$35</td>
+                        </tr>
+                        <tr>
+                            <td>Lemon Drizzle</td>
+                            <td>Lemon</td>
+                            <td>Small</td>
+                            <td>$22</td>
+                        </tr>
+                        <tr>
+                            <td>Carrot Cake</td>
+                            <td>Carrot</td>
+                            <td>Medium</td>
+                            <td>$28</td>
+                        </tr>
+                        <tr>
+                            <td>Coconut Paradise</td>
+                            <td>Coconut</td>
+                            <td>Large</td>
+                            <td>$32</td>
+                        </tr>
+                        <tr>
+                            <td>Almond Delight</td>
+                            <td>Almond</td>
+                            <td>Medium</td>
+                            <td>$29</td>
+                        </tr>
+                        <tr>
+                            <td>Peanut Butter</td>
+                            <td>Peanut Butter</td>
+                            <td>Small</td>
+                            <td>$24</td>
+                        </tr>
+                        <tr>
+                            <td>Coffee Craze</td>
+                            <td>Coffee</td>
+                            <td>Large</td>
+                            <td>$31</td>
+                        </tr>
+                        <tr>
+                            <td>Banana Walnut</td>
+                            <td>Banana Walnut</td>
+                            <td>Medium</td>
+                            <td>$26</td>
+                        </tr>
+                        <tr>
+                            <td>Matcha Green Tea</td>
+                            <td>Matcha</td>
+                            <td>Small</td>
+                            <td>$23</td>
+                        </tr>
+                        <tr>
+                            <td>Black Forest</td>
+                            <td>Chocolate Cherry</td>
+                            <td>Large</td>
+                            <td>$34</td>
+                        </tr>
+                        <tr>
+                            <td>Marble Swirl</td>
+                            <td>Chocolate Vanilla</td>
+                            <td>Medium</td>
+                            <td>$25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">Special Offers</h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Limited Time Offer</h3>
+                    </div>
+                    <div class="panel-body">
+                        Save up to 20% on selected cakes. Order now!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer__links">
+                <div class="footer__column">
+                    <h3>Sweet Land</h3>
+                    <ul>
+                        <li><a href="order-tracking.html">Track</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="aboutus.html">About US</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>180, KKS Road, Jaffna, Sri Lanka</li>
+                        <li>+94 77 568 1234</li>
+                        <li><a href="mailto:mail@sweetland.com">mail@sweetland.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © Sweet land, All Rights Reserved. | Design & Concept by SA Cops.
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

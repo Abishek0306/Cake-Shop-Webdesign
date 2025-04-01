@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Land</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .background-box {
+            margin: 5px;
+            padding: 10px;
+            background-color: #e3e3e3;
+            border-radius: 15px;
+        }
+        .background-box > h3 {
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        .search-bar {
+            height: 40px;
+            width: 400px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+        }
+        .container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            text-align: center;
+            justify-content: center;
+        }
+        .box {
+            height: fit-content;
+            background:#b0b1b1 ;
+            cursor: pointer;
+            padding-bottom: 10px;
+            border: none;
+            border-radius: 24px;
+            padding: 10px;
+            margin: 16px;
+            width: 260px;
+            text-align: center;
+        }
+        .box img {
+            margin-top: 10px;
+            width: 220px ;
+            height: fit-content;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        .box h3 {
+            margin: 8px 0;
+        }
+        .box p {
+            color: #000000;
+            font-weight: bolder;
+        }
+        .box input {
+            padding: 7px 10px;
+            width: 50px;
+            margin-top: 8px;
+            border-radius: 15px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><p id="name1">Sweet Land</p></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Sweet land.html" class="btn btn-default"><p class="nav-text">Home</p></a></li>
+                        <li><a href="cakes.html" class="btn btn-default"><p class="nav-text">Cakes</p></a></li>
+                        <li><a href="order.html" class="btn btn-default"><p class="nav-text">Order</p></a></li>
+                        <li><a href="login.html" class="btn btn-default"><p class="nav-text">Login</p></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="row">
+            <div class="col-md-4">
+                <h2 class="section-title">Order Your Cake</h2>
+                <p class="description">Find and order your favorite cakes with ease.</p>
+                <a href="login.html" class="btn btn-primary">Register Now</a>
+            </div>
+            <div class="col-md-4">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="description">Get in touch with us for any inquiries.</p>
+                <a href="contact.html" class="btn btn-info">Contact Us</a>
+            </div>
+        </section>
+
+        <div class="background-box">
+            <div>
+                <p id="name2">Sweet Land</p>
+            </div>
+            <div>
+                <p id="name21">cakes</p>
+            </div>
+            <input type="text" id="searchInput" class="search-bar" onkeyup="filterProducts()" placeholder="Search for products...">
+            <div class="container">
+                <div class="box">
+                    <img src="Chocolate Delight.jpg" class="img-thumbnail" alt="Chocolate Delight">
+                    <h3>Chocolate Delight</h3>
+                    <p>$80.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Chocolate Delight', 80, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Vanilla Dream.jpg" class="img-thumbnail" alt="Vanilla Dream">
+                    <h3>Vanilla Dream</h3>
+                    <p>$100.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Vanilla Dream', 100, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Red Velvet.jpg" class="img-fluid" alt="Red Velvet">
+                    <h3>Chocolate Delight</h3>
+                    <p>$85.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Red Velvet', 85, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Strawberry Bliss.jpg" class="img-fluid" alt="Strawberry Bliss">
+                    <h3>Strawberry Bliss</h3>
+                    <p>$92.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Strawberry Bliss', 92, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Blueberry Burst.jpg" class="rounded" alt="Blueberry Burst">
+                    <h3>Blueberry Burst</h3>
+                    <p>$80.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Blueberry Burst', 80, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Lemon Drizzle.jpg" class="rounded" alt="Lemon Drizzle">
+                    <h3>Lemon Drizzle</h3>
+                    <p>$65.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Lemon Drizzle', 65, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Carrot Cake.jpg" class="img-thumbnail" alt="Carrot Cake">
+                    <h3>Carrot Cake</h3>
+                    <p>$75.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Carrot Cake', 75, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Almond Delight.jpg" class="img-thumbnail" alt="Almond Delight">
+                    <h3>Almond Delight</h3>
+                    <p>$78.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Almond Delight', 78, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Peanut Butter.jpg" class="img-thumbnail" alt="Peanut Butter">
+                    <h3>Peanut Butter</h3>
+                    <p>$88.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Peanut Butter', 88, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Coffee Craze.jpg" class="img-thumbnail" alt="Coffee Craze">
+                    <h3>Coffee Craze</h3>
+                    <p>$75.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Coffee Craze', 75, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Banana Walnut.jpg" class="img-fluid" alt="Banana Walnut">
+                    <h3>Banana Walnut</h3>
+                    <p>$78.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Banana Walnut', 78, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Matcha Green Tea.jpg" class="img-fluid" alt="Matcha Green Tea">
+                    <h3>Matcha Green Tea</h3>
+                    <p>$88.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Matcha Green Tea', 88, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Black Forest.jpg" class="img-fluid" alt="Black Forest">
+                    <h3>Black Forest</h3>
+                    <p>$98.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Black Forest', 98, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+                <div class="box">
+                    <img src="Marble Swirl.jpg" class="img-fluid" alt="Marble Swirl">
+                    <h3>Marble Swirl</h3>
+                    <p>$70.00</p>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button class="btn btn-warning" onclick="addToCart('Marble Swirl', 70, document.getElementById('quantity').value)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer__links">
+                <div class="footer__column">
+                    <h3>Sweet Land</h3>
+                    <ul>
+                        <li><a href="order-tracking.html">Track</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="aboutus.html">About US</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>180, KKS Road, Jaffna, Sri Lanka</li>
+                        <li>+94 77 568 1234</li>
+                        <li><a href="mailto:mail@sweetland.com">mail@sweetland.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © Sweet land, All Rights Reserved. | Design & Concept by SA Cops.
+        </div>
+    </footer>
+
+    <script>
+        function filterProducts() {
+            const searchInput = $('#searchInput').val().toLowerCase();
+            const products = $('.box');
+            
+            products.each(function() {
+                const productName = $(this).find('h3').text().toLowerCase();
+                if (productName.includes(searchInput)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+
+        function addToCart(productName, productPrice, quantity) {
+            alert(`Product: ${productName}\nPrice: $${productPrice.toFixed(2)}\nQuantity: ${quantity}\n\nTotal: $${(quantity * productPrice).toFixed(2)}`);
+        }
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
